@@ -1,0 +1,6 @@
+# temporary and cache files
+*.swp
+.sass_cache
+
+#npm dependencies
+node_modules/
