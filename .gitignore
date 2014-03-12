@@ -1,6 +1,9 @@
 # temporary and cache files
 *.swp
-.sass_cache
+.sass-cache/
 
 #npm dependencies
 node_modules/
+
+#bower components
+bower_components

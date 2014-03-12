@@ -14,9 +14,9 @@ module.exports = function(grunt) {
 			options: {
 				livereload: true
 			},
-			compass: {
+			sass: {
 				files: ['assets/stylesheets/**/*.scss'],
-				tasks: ['compass']
+				tasks: ['sass']
 			},
 			javascript: {
 				files: ['assets/javascripts/**/*.coffee', 'assets/javascripts/**/*.js'],
@@ -31,15 +31,15 @@ module.exports = function(grunt) {
 			}
 		},
 
-		//compass
+		//sass
 
-		compass: {
+		sass: {
+			options: {
+				style: 'compressed'
+			},
 			dist: {
-				options: {
-					bundleExec: true,
-					config: 'config.rb',
-					force: true
-				}
+				src: ['assets/stylesheets/style.css.scss'],
+				dest: 'template/style.css'
 			}
 		},
 
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 
 		concat: {
 			dist: {
-				files: { 'app.js': 'assets/javascripts/**/*.js' }
+				files: { 'template/javascripts/app.js': 'assets/javascripts/**/*.js' }
 			}
 		},
 
@@ -68,11 +68,8 @@ module.exports = function(grunt) {
 
 		uglify: {
 			dist: {
-				options: {
-					sourceMap: 'sourceMap.js'
-				},
 				files: {
-					'app.min.js': 'app.js'
+					'template/javascripts/app.min.js': 'template/javascripts/app.js'
 				}
 			}
 		},
@@ -83,27 +80,29 @@ module.exports = function(grunt) {
 			dist: {
 				options: {
 					optimizationLevel: 3,
-					progressive: true
+					progressive: true,
+					cache: false
 				},
 				files: [
 					{
 						expand: true,
 						cwd: 'assets/images/',
 						src: '**/*.{jpg,png}',
-						dest: 'images/'
+						dest: 'template/images/'
 					}
 				]
 			},
 			dev: {
 				options: {
-					optimizationLevel: 0
+					optimizationLevel: 0,
+					cache: false
 				},
 				files: [
 					{
 						expand: true,
 						cwd: 'assets/images/',
 						src: '**/*.{jpg,png}',
-						dest: 'images/'
+						dest: 'template/images/'
 					}
 				]
 			}

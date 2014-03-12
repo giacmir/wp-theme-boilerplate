@@ -1,0 +1,18 @@
+{
+  "name": "wordpress-theme-base",
+  "version": "0.2.0",
+  "homepage": "https://github.com/giacmir/wp-grunt-theme-boilerplate",
+  "authors": [
+    "Giacomo Mirabassi <giacomo@mirabassi.it>"
+  ],
+  "description": "Basic development environment for wordpress themes",
+  "license": "GNU GPL3",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
