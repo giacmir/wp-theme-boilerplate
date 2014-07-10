@@ -8,3 +8,6 @@ debconf-set-selections <<< 'mysql-server mysql-server/root_password_again passwo
 
 apt-get -q -y install apache2 php5 mysql-server php5-mysql php5-curl php5-mcrypt phpmyadmin
 ln -s /usr/share/phpmyadmin /var/www/phpmyadmin
+
+#changes default php.ini
+cp /vagrant/vm/templates/php.ini /etc/php5/apache2/php.ini
